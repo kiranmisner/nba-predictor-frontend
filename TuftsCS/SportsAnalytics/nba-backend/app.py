@@ -21,6 +21,10 @@ classification = pickle.load(open('./modeling/classifier.pkl','rb'))
 # Load the model
 # model = pickle.load(open('./modeling/Career_BPM.pkl','rb'))
 
+@app.route('/', methods=['GET'])
+def home():
+    return '<h1>Welcome to the NBA Player Prediction API</h1>'
+
 @app.route('/api',methods=['POST'])
 def predict():
     # Get the data from the POST request.
